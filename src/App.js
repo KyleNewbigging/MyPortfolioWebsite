@@ -1,23 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import profileImage from "./images/LinkedInProfile.jpg";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="bg-gray-800 text-white p-6">
+        <nav>
+          <a href="#home" className="mr-4 hover:text-yellow-300">
+            Home
+          </a>
+          <a href="#projects" className="mr-4 hover:text-yellow-300">
+            Projects
+          </a>
+          <a href="#about" className="hover:text-yellow-300">
+            About
+          </a>
+        </nav>
       </header>
+      <main className="p-6">
+        <section id="home" className="flex flex-col items-center">
+          <img
+            src={profileImage}
+            alt="Kyle Newbigging"
+            className="w-48 h-48 object-cover rounded-full mt-6 mb-4"
+          />
+          <h1 className="text-4xl font-bold mb-4">Kyle Newbigging</h1>
+          <p className="text-gray-700 mb-8 text-center">
+            I have just graduated Computer Science with a Math Minor at the
+            University of Guelph. Along with my studies, I was president and
+            captain of the school's varsity ultimate frisbee team. I have had a
+            passion for technology since I was young. As I've grown, I have come
+            to love AI and game development.
+          </p>
+        </section>
+        <section id="projects">
+          <h2 className="text-3xl font-bold mb-4">Projects</h2>
+          <p className="text-gray-700 mb-8">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            sit amet libero consequat, lacinia magna vel, ullamcorper odio. Sed
+            et facilisis quam.
+          </p>
+        </section>
+        <section id="about">
+          <h2 className="text-3xl font-bold mb-4">About</h2>
+          <p className="text-gray-700">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            sit amet libero consequat, lacinia magna vel, ullamcorper odio. Sed
+            et facilisis quam.
+          </p>
+        </section>
+      </main>
     </div>
   );
 }
