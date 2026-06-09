@@ -8,8 +8,10 @@ const BIRTH_DATE = "2001-03-07";
 const ACCENT = "#e7b24d";
 const RESUME_URL = "https://drive.google.com/file/d/1PtjWHluV8STGgtCEq2PLlrSKfwDki_GA";
 const EMAIL_ADDRESS = "kyle.newbigging@gmail.com";
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const localAsset = (path: string) => `${BASE_PATH}${path}`;
 const PROFILE_PHOTO_SRC =
-  process.env.NEXT_PUBLIC_PROFILE_PHOTO_URL || "/LinkedInProfile.jpg";
+  process.env.NEXT_PUBLIC_PROFILE_PHOTO_URL || localAsset("/LinkedInProfile.jpg");
 
 type Tech = {
   id: string;
@@ -279,7 +281,7 @@ function Hero() {
             alt="Kyle Newbigging"
             width={613}
             height={613}
-            onError={() => setPhotoSrc("/LinkedInProfile.jpg")}
+            onError={() => setPhotoSrc(localAsset("/LinkedInProfile.jpg"))}
           />
         </div>
 
